@@ -48,4 +48,6 @@
 
 .card-preview {
   height: fit-content;
+  display: grid;
+  grid-template-columns: 200px 1fr;
 }

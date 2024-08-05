@@ -4,4 +4,5 @@ export interface ContactData {
   company: string;
   email: string;
   phone: string;
+  qr: boolean;
 }

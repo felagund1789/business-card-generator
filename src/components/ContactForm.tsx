@@ -18,6 +18,7 @@ const ContactForm = ({ onSubmit }: Props) => {
     company: "",
     email: "",
     phone: "",
+    qr: false,
   };
 
   const submitHandler = (values: FieldValues) => {
@@ -27,6 +28,7 @@ const ContactForm = ({ onSubmit }: Props) => {
       company: values["company"],
       email: values["email"],
       phone: values["phone"],
+      qr: values["qr"],
     });
   };
 
@@ -81,6 +83,16 @@ const ContactForm = ({ onSubmit }: Props) => {
             className="nes-input"
             placeholder="Your phone number"
           />
+        </div>
+        <div className="nes-field">
+          <label>
+            <input
+              {...register("qr")}
+              type="checkbox"
+              className="nes-checkbox"
+            />
+            <span>Generate QR code</span>
+          </label>
         </div>
         <div className="center">
           <div>
