@@ -45,7 +45,8 @@ const ContactForm = ({ onSubmit }: Props) => {
             className={`nes-input ${errors.name ? "is-error" : ""}`}
             placeholder="Your full name"
           />
-        </div>
+          {errors.name && <span className="nes-text is-error">Your name is required.</span>}
+          </div>
         <div className="nes-field">
           <label htmlFor="jobTitle">Job title</label>
           <input
@@ -53,6 +54,7 @@ const ContactForm = ({ onSubmit }: Props) => {
             className={`nes-input ${errors.jobTitle ? "is-error" : ""}`}
             placeholder="What you do for a living"
           />
+          {errors.jobTitle && <span className="nes-text is-error">The job title is required.</span>}
         </div>
         <div className="nes-field">
           <label htmlFor="company">Company</label>
@@ -69,13 +71,15 @@ const ContactForm = ({ onSubmit }: Props) => {
             className={`nes-input ${errors.email ? "is-error" : ""}`}
             placeholder="Your e-mail address"
           />
+          {errors.email && errors.email.type === "required" && <span className="nes-text is-error">The email address is required.</span>}
+          {errors.email && errors.email.type === "pattern" && <span className="nes-text is-error">The email address is not valid.</span>}
         </div>
         <div className="nes-field">
           <label htmlFor="phone">Phone</label>
           <input
             {...register("phone")}
             className="nes-input"
-            placeholder="Your phone numner"
+            placeholder="Your phone number"
           />
         </div>
         <div className="center">
