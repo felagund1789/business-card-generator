@@ -1,6 +1,7 @@
 const ContactForm = () => {
   return (
-    <>
+    <div className="nes-container with-title">
+      <h2 className="title">BusiNESs Card Generator</h2>
       <form>
         <div className="nes-field">
           <label htmlFor="name">Name and surname</label>
@@ -29,7 +30,7 @@ const ContactForm = () => {
           </div>
         </div>
       </form>
-    </>
+    </div>
   );
 };
 
