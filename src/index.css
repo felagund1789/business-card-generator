@@ -4,6 +4,13 @@
   font-family: "Press Start 2P", system-ui;
 }
 
-body {
-  padding: 16px;
+.nes-container,
+.nes-btn,
+.nes-field {
+  margin: 16px;
+}
+
+.center {
+  display: flex;
+  justify-content: space-around;
 }
