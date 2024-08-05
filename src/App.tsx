@@ -9,8 +9,14 @@ function App() {
 
   return (
     <>
-      <ContactForm onSubmit={setContactData} />
-      { contactData && <CardPreview contactData={contactData} /> }
+      <header className="header">
+        <div className="nes-icon nes-logo"></div>
+        <h1>BusiNESs Card Generator</h1>    
+      </header>
+      <main className="content">
+        <ContactForm onSubmit={setContactData} />
+        { contactData && <CardPreview contactData={contactData} /> }
+      </main>
     </>
   )
 }

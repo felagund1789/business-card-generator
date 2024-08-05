@@ -4,6 +4,37 @@
   font-family: "Press Start 2P", system-ui;
 }
 
+.header {
+  display: flex;
+  margin: 16px;
+  min-height: 96px;
+}
+
+.header h1 {
+  position: absolute;
+  left: 160px;
+  top: 48px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media only screen and (max-width: 860px) {
+  .header { min-height: 128px; }
+  .content { grid-template-columns: 1fr; }
+}
+
+@media only screen and (max-width: 580px) {
+  .header h1 { font-size: 1.75rem; }
+}
+
+@media only screen and (max-width: 524px) {
+  .header { min-height: 160px; }
+  .header h1 { font-size: 1.5rem; }
+}
+
 .nes-container,
 .nes-btn,
 .nes-field {
@@ -13,4 +44,8 @@
 .center {
   display: flex;
   justify-content: space-around;
+}
+
+.card-preview {
+  height: fit-content;
 }
