@@ -6,7 +6,12 @@ interface Props {
 }
 
 const ContactForm = ({ onSubmit }: Props) => {
-  const { register, handleSubmit, reset } = useForm();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
   const defaultValues: ContactData = {
     name: "",
     jobTitle: "",
@@ -28,20 +33,24 @@ const ContactForm = ({ onSubmit }: Props) => {
   return (
     <div className="nes-container with-title">
       <h2 className="title">BusiNESs Card Generator</h2>
+      <p>
+        Generate your business card in the style of classic NES. Enter your
+        details and hit <b>Generate</b>.
+      </p>
       <form onSubmit={handleSubmit(submitHandler)}>
         <div className="nes-field">
           <label htmlFor="name">Name and surname</label>
           <input
-            {...register("name")}
-            className="nes-input"
+            {...register("name", { required: true, minLength: 3 })}
+            className={`nes-input ${errors.name ? "is-error" : ""}`}
             placeholder="Your full name"
           />
         </div>
         <div className="nes-field">
           <label htmlFor="jobTitle">Job title</label>
           <input
-            {...register("jobTitle")}
-            className="nes-input"
+            {...register("jobTitle", { required: true, minLength: 3 })}
+            className={`nes-input ${errors.jobTitle ? "is-error" : ""}`}
             placeholder="What you do for a living"
           />
         </div>
@@ -56,8 +65,8 @@ const ContactForm = ({ onSubmit }: Props) => {
         <div className="nes-field">
           <label htmlFor="email">Email</label>
           <input
-            {...register("email")}
-            className="nes-input"
+            {...register("email", { required: true, pattern: /^.+@.+\..+$/i })}
+            className={`nes-input ${errors.email ? "is-error" : ""}`}
             placeholder="Your e-mail address"
           />
         </div>

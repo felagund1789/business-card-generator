@@ -9,9 +9,12 @@ const CardPreview = ({ contactData }: Props) => {
     <div className="nes-container with-title">
       <h2 className="title">My busiNESs card</h2>
       <h2>{contactData.name}</h2>
-      <p>{contactData.jobTitle} @ {contactData.company}</p>
+      <p>
+        {contactData.jobTitle}
+        {contactData.company ? ` @ ${contactData.company}` : ""}
+      </p>
       <p>email: {contactData.email}</p>
-      <p>phone: {contactData.phone}</p>
+      {contactData.phone && <p>phone: {contactData.phone}</p>}
     </div>
   );
 };
