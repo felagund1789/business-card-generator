@@ -1,27 +1,46 @@
-const ContactForm = () => {
+import { useForm, FieldValues } from "react-hook-form";
+import { ContactData } from "../types";
+
+interface Props {
+  onSubmit: (contactData: ContactData) => void;
+}
+
+const ContactForm = ({ onSubmit }: Props) => {
+  const { register, handleSubmit } = useForm();
+
+  const submitHandler = (values: FieldValues) => {
+    onSubmit({
+      name: values["name"],
+      jobTitle: values["jobTitle"],
+      company: values["company"],
+      email: values["email"],
+      phone: values["phone"],
+    });
+  } 
+
   return (
     <div className="nes-container with-title">
       <h2 className="title">BusiNESs Card Generator</h2>
-      <form>
+      <form onSubmit={handleSubmit(submitHandler)}>
         <div className="nes-field">
           <label htmlFor="name">Name and surname</label>
-          <input type="text" id="name" className="nes-input" placeholder="Your full name" />
+          <input { ...register("name") } className="nes-input" placeholder="Your full name" />
         </div>
         <div className="nes-field">
           <label htmlFor="jobTitle">Job title</label>
-          <input type="text" id="jobTitle" className="nes-input" placeholder="What you do for a living" />
+          <input { ...register("jobTitle") } className="nes-input" placeholder="What you do for a living" />
         </div>
         <div className="nes-field">
           <label htmlFor="company">Company</label>
-          <input type="text" id="company" className="nes-input" placeholder="Where you work" />
+          <input { ...register("company") } className="nes-input" placeholder="Where you work" />
         </div>
         <div className="nes-field">
           <label htmlFor="email">Email</label>
-          <input type="text" id="email" className="nes-input" placeholder="Your e-mail address" />
+          <input { ...register("email") } className="nes-input" placeholder="Your e-mail address" />
         </div>
         <div className="nes-field">
           <label htmlFor="phone">Phone</label>
-          <input type="text" id="phone" className="nes-input" placeholder="Your phone numner" />
+          <input { ...register("phone") } className="nes-input" placeholder="Your phone numner" />
         </div>
         <div className="center">
           <div>
