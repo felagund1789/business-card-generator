@@ -6,7 +6,14 @@ interface Props {
 }
 
 const ContactForm = ({ onSubmit }: Props) => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
+  const defaultValues: ContactData = {
+    name: "",
+    jobTitle: "",
+    company: "",
+    email: "",
+    phone: "",
+  };
 
   const submitHandler = (values: FieldValues) => {
     onSubmit({
@@ -16,7 +23,7 @@ const ContactForm = ({ onSubmit }: Props) => {
       email: values["email"],
       phone: values["phone"],
     });
-  } 
+  };
 
   return (
     <div className="nes-container with-title">
@@ -24,28 +31,56 @@ const ContactForm = ({ onSubmit }: Props) => {
       <form onSubmit={handleSubmit(submitHandler)}>
         <div className="nes-field">
           <label htmlFor="name">Name and surname</label>
-          <input { ...register("name") } className="nes-input" placeholder="Your full name" />
+          <input
+            {...register("name")}
+            className="nes-input"
+            placeholder="Your full name"
+          />
         </div>
         <div className="nes-field">
           <label htmlFor="jobTitle">Job title</label>
-          <input { ...register("jobTitle") } className="nes-input" placeholder="What you do for a living" />
+          <input
+            {...register("jobTitle")}
+            className="nes-input"
+            placeholder="What you do for a living"
+          />
         </div>
         <div className="nes-field">
           <label htmlFor="company">Company</label>
-          <input { ...register("company") } className="nes-input" placeholder="Where you work" />
+          <input
+            {...register("company")}
+            className="nes-input"
+            placeholder="Where you work"
+          />
         </div>
         <div className="nes-field">
           <label htmlFor="email">Email</label>
-          <input { ...register("email") } className="nes-input" placeholder="Your e-mail address" />
+          <input
+            {...register("email")}
+            className="nes-input"
+            placeholder="Your e-mail address"
+          />
         </div>
         <div className="nes-field">
           <label htmlFor="phone">Phone</label>
-          <input { ...register("phone") } className="nes-input" placeholder="Your phone numner" />
+          <input
+            {...register("phone")}
+            className="nes-input"
+            placeholder="Your phone numner"
+          />
         </div>
         <div className="center">
           <div>
-            <button type="submit" className="nes-btn is-success">Generate</button>
-            <button type="button" className="nes-btn is-primary">Clear</button>
+            <button type="submit" className="nes-btn is-success">
+              Generate
+            </button>
+            <button
+              type="button"
+              className="nes-btn is-primary"
+              onClick={() => reset(defaultValues)}
+            >
+              Clear
+            </button>
           </div>
         </div>
       </form>
