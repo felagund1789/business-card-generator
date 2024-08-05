@@ -6,8 +6,7 @@ interface Props {
 
 const CardPreview = ({ contactData }: Props) => {
   return (
-    <div className="nes-container with-title">
-      <h2 className="title">My busiNESs card</h2>
+    <div className="nes-container card-preview">
       <h2>{contactData.name}</h2>
       <p>
         {contactData.jobTitle}

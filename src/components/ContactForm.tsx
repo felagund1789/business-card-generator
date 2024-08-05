@@ -31,7 +31,7 @@ const ContactForm = ({ onSubmit }: Props) => {
   };
 
   return (
-    <div className="nes-container with-title">
+    <div className="nes-container with-title contact-form">
       <h2 className="title">BusiNESs Card Generator</h2>
       <p>
         Generate your business card in the style of classic NES. Enter your
