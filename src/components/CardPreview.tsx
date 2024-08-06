@@ -15,12 +15,16 @@ TEL;CHARSET=UTF-8;type=WORK:${contactData.phone}
 ORG;CHARSET=UTF-8:${contactData.company}
 TITLE;CHARSET=UTF-8:${contactData.jobTitle}
 END:VCARD`;
-  const quickchartURL = `https://quickchart.io/qr?text=${encodeURI(vcard)}&size=120&margin=0`;
+  const quickchartURL = `https://quickchart.io/qr?text=${encodeURI(
+    vcard
+  )}&size=120&margin=0`;
   const gravatarURL = `https://gravatar.com/avatar/${sha256(
     String(contactData.email).trim().toLocaleLowerCase()
   )}?s=120`;
   const base64 = btoa(JSON.stringify(contactData));
-  const shareURL = `${document.location.protocol}//${document.location.hostname}:${document.location.port}#${base64}`;
+  const shareURL = `${document.location.protocol}//${
+    document.location.hostname
+  }${document.location.port ? ":" + document.location.port : ""}#${base64}`;
 
   return (
     <div className="nes-container card-preview">

@@ -74,6 +74,7 @@ const ContactForm = ({ initialValues, onSubmit }: Props) => {
         <div className="nes-field">
           <label htmlFor="email">Email</label>
           <input
+            type="email"
             {...register("email", { required: true, pattern: /^.+@.+\..+$/i })}
             className={`nes-input ${errors.email ? "is-error" : ""}`}
             placeholder="Your e-mail address"
