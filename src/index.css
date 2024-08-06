@@ -49,5 +49,9 @@
 .card-preview {
   height: fit-content;
   display: grid;
-  grid-template-columns: 172px 1fr 172px;
+  grid-template-columns: 160px 1fr 160px;
+}
+
+.card-preview img {
+  margin: 4px;
 }
