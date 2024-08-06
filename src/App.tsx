@@ -8,10 +8,14 @@ import { ContactData } from "./types";
 function App() {
   const [contactData, setContactData] = useState<ContactData>();
   const [shareURL, setShareURL] = useState<string>("");
-  const base64 =
+  try {
+    const base64 =
     (document.location.hash && document.location.hash.substring(1)) || "";
-  if (base64 && !contactData) {
-    setContactData(JSON.parse(atob(base64)));
+    if (base64 && !contactData) {
+      setContactData(JSON.parse(atob(base64)));
+    }
+  } catch(error) {
+    document.location.hash = "";
   }
 
   return (
