@@ -71,3 +71,8 @@ dialog {
   top: 30%; 
   z-index: 5000;
 }
+
+footer {
+  margin: 16px;
+  bottom: 0px;
+}
