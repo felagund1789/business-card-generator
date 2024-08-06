@@ -2,16 +2,19 @@ import { useForm, FieldValues } from "react-hook-form";
 import { ContactData } from "../types";
 
 interface Props {
+  initialValues: ContactData;
   onSubmit: (contactData: ContactData) => void;
 }
 
-const ContactForm = ({ onSubmit }: Props) => {
+const ContactForm = ({ initialValues, onSubmit }: Props) => {
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    values: initialValues
+  });
   const defaultValues: ContactData = {
     name: "",
     jobTitle: "",

@@ -6,6 +6,10 @@ import { ContactData } from "./types";
 
 function App() {
   const [contactData, setContactData] = useState<ContactData>();
+  const base64 = document.location.hash && document.location.hash.substring(1) || "";
+  if (base64 && !contactData) {
+    setContactData(JSON.parse(atob(base64)));
+  }
 
   return (
     <>
@@ -14,7 +18,7 @@ function App() {
         <h1>BusiNESs Card Generator</h1>    
       </header>
       <main className="content">
-        <ContactForm onSubmit={setContactData} />
+        <ContactForm initialValues={contactData || {} as ContactData} onSubmit={setContactData} />
         { contactData && <CardPreview contactData={contactData} /> }
       </main>
     </>
