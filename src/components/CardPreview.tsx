@@ -19,8 +19,8 @@ END:VCARD`;
   const gravatarURL = `https://gravatar.com/avatar/${sha256(
     String(contactData.email).trim().toLocaleLowerCase()
   )}?s=120`;
-  const base64 = btoa(`${JSON.stringify(contactData)}}`);
-  const shareURL = `${document.location.href}#${base64}`;
+  const base64 = btoa(JSON.stringify(contactData));
+  const shareURL = `${document.location.protocol}//${document.location.hostname}:${document.location.port}#${base64}`;
 
   return (
     <div className="nes-container card-preview">
