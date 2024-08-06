@@ -5,4 +5,5 @@ export interface ContactData {
   email: string;
   phone: string;
   qr: boolean;
+  gravatar: boolean;
 }

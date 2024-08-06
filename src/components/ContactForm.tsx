@@ -19,6 +19,7 @@ const ContactForm = ({ onSubmit }: Props) => {
     email: "",
     phone: "",
     qr: false,
+    gravatar: false,
   };
 
   const submitHandler = (values: FieldValues) => {
@@ -29,6 +30,7 @@ const ContactForm = ({ onSubmit }: Props) => {
       email: values["email"],
       phone: values["phone"],
       qr: values["qr"],
+      gravatar: values["gravatar"],
     });
   };
 
@@ -83,6 +85,16 @@ const ContactForm = ({ onSubmit }: Props) => {
             className="nes-input"
             placeholder="Your phone number"
           />
+        </div>
+        <div className="nes-field">
+          <label>
+            <input
+              {...register("gravatar")}
+              type="checkbox"
+              className="nes-checkbox"
+            />
+            <span>Show Gravatar</span>
+          </label>
         </div>
         <div className="nes-field">
           <label>
