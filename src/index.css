@@ -55,3 +55,19 @@
 .card-preview img {
   margin: 4px;
 }
+
+.card-preview .share-btn {
+  float: inline-end;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: auto;
+  width: 36px;
+  line-height: 36px;
+  height: 36px;
+}
+
+dialog {
+  position: fixed;
+  top: 30%; 
+  z-index: 5000;
+}
