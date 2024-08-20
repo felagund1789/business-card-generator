@@ -7,15 +7,15 @@ interface Props {
 }
 
 const CardPreview = ({ contactData, onShare }: Props) => {
-  const vcard = `BEGIN:VCARD
-VERSION:3.0
-N;CHARSET=UTF-8:${contactData.name}
-EMAIL;CHARSET=UTF-8;type=INTERNET,WORK:${contactData.email}
-TEL;CHARSET=UTF-8;type=WORK:${contactData.phone}
-URL;CHARSET=UTF-8;type=WORK:${contactData.website}
-ORG;CHARSET=UTF-8:${contactData.company}
-TITLE;CHARSET=UTF-8:${contactData.jobTitle}
-END:VCARD`;
+  const vcard = "BEGIN:VCARD\n" +
+"VERSION:3.0\n" +
+"N;CHARSET=UTF-8:" + contactData.name + "\n" +
+"EMAIL;CHARSET=UTF-8;type=INTERNET,WORK:" + contactData.email + "\n" +
+(contactData.phone ? "TEL;CHARSET=UTF-8;type=WORK:" + contactData.phone + "\n" : "") +
+(contactData.website ? "URL;CHARSET=UTF-8;type=WORK:" + contactData.website + "\n" : "") +
+(contactData.company ? "ORG;CHARSET=UTF-8:" + contactData.company + "\n" : "") +
+"TITLE;CHARSET=UTF-8:" + contactData.jobTitle + "\n" +
+"END:VCARD";
 console.log(vcard);
   const quickchartURL = `https://quickchart.io/qr?text=${encodeURI(
     vcard
