@@ -21,6 +21,7 @@ const ContactForm = ({ initialValues, onSubmit }: Props) => {
     company: "",
     email: "",
     phone: "",
+    website: "",
     qr: false,
     gravatar: false,
   };
@@ -32,6 +33,7 @@ const ContactForm = ({ initialValues, onSubmit }: Props) => {
       company: values["company"],
       email: values["email"],
       phone: values["phone"],
+      website: values["website"],
       qr: values["qr"],
       gravatar: values["gravatar"],
     });
@@ -88,6 +90,14 @@ const ContactForm = ({ initialValues, onSubmit }: Props) => {
             {...register("phone")}
             className="nes-input"
             placeholder="Your phone number"
+          />
+        </div>
+        <div className="nes-field">
+          <label htmlFor="website">Web site</label>
+          <input
+            {...register("website")}
+            className="nes-input"
+            placeholder="Your website or personal page"
           />
         </div>
         <div className="nes-field">
