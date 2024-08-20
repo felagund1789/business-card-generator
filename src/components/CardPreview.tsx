@@ -12,9 +12,11 @@ VERSION:3.0
 N;CHARSET=UTF-8:${contactData.name}
 EMAIL;CHARSET=UTF-8;type=INTERNET,WORK:${contactData.email}
 TEL;CHARSET=UTF-8;type=WORK:${contactData.phone}
+URL;CHARSET=UTF-8;type=WORK:${contactData.website}
 ORG;CHARSET=UTF-8:${contactData.company}
 TITLE;CHARSET=UTF-8:${contactData.jobTitle}
 END:VCARD`;
+console.log(vcard);
   const quickchartURL = `https://quickchart.io/qr?text=${encodeURI(
     vcard
   )}&size=120&margin=0`;
@@ -42,6 +44,7 @@ END:VCARD`;
         </p>
         <p>email: {contactData.email}</p>
         {contactData.phone && <p>phone: {contactData.phone}</p>}
+        {contactData.website && <p>website: {contactData.website}</p>}
       </div>
       <div className="share-btn" onClick={() => onShare(shareURL)}>
         <svg

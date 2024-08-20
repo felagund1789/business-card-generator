@@ -4,6 +4,7 @@ export interface ContactData {
   company: string;
   email: string;
   phone: string;
+  website: string;
   qr: boolean;
   gravatar: boolean;
 }
