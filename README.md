@@ -84,7 +84,7 @@ The app should now be running on [http://localhost:5173](http://localhost:5173).
 
 Contributions are welcome! Please follow these steps:
 
-1. Clone the repository.
+1. Fork the repository.
 2. Create a new branch (`git checkout -b feature/your-feature-name`).
 3. Make your changes.
 4. Commit your changes (`git commit -m 'Add some feature'`).
