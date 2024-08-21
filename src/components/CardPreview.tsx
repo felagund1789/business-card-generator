@@ -11,7 +11,7 @@ const CardPreview = ({ contactData, onShare }: Props) => {
 "VERSION:3.0\n" +
 "N;CHARSET=UTF-8:" + contactData.name + "\n" +
 "EMAIL;CHARSET=UTF-8;type=INTERNET,WORK:" + contactData.email + "\n" +
-"TITLE;CHARSET=UTF-8:" + contactData.jobTitle + "\n" +
+"ROLE;CHARSET=UTF-8:" + contactData.jobTitle + "\n" +
 (contactData.phone ? "TEL;CHARSET=UTF-8;type=WORK:" + contactData.phone + "\n" : "") +
 (contactData.website ? "URL;CHARSET=UTF-8;type=WORK:" + contactData.website + "\n" : "") +
 (contactData.company ? "ORG;CHARSET=UTF-8:" + contactData.company + "\n" : "") +
