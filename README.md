@@ -32,8 +32,9 @@ A "Share" button is available to copy a link to the generated card. This link in
 
 ## Technology Stack
 
-![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=white)
+![React](https://img.shields.io/badge/-React-000000?style=flat-square&logo=React&logoColor=61DAFB)
 ![React Hook Form](https://img.shields.io/badge/-React%20Hook%20Form-EC5990?style=flat-square&logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=white)
 ![NES.css](https://img.shields.io/badge/-NES.css-8EC3E6?style=flat-square)
 ![Vite](https://img.shields.io/badge/-Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
 
